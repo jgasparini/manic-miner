@@ -86,5 +86,5 @@ All sound is generated at runtime using the Web Audio API — no external files 
 - [x] 3 complete levels with escalating difficulty
 - [x] Procedural audio (SFX + chiptune music)
 - [x] Visual polish (title cards, score popups, portal pulse, death flash)
-- [ ] Real pixel art and tileset
+- [x] Pixel art assets (miner, bat enemy, gem, portal, cave stone tileset)
 - [ ] Deploy to GitHub Pages
