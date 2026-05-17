@@ -8,12 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "gen-assets": "node scripts/gen-assets.js",
-    "gen-levels": "node scripts/design-levels.js"
+    "gen-levels": "node scripts/design-levels.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "phaser": "^3.88.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^6.3.5"
   }
 }
