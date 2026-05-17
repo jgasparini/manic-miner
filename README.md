@@ -2,7 +2,9 @@
 
 A browser-based 2D platformer inspired by the classic 1983 ZX Spectrum game by Matthew Smith. Collect all the items in each cavern, reach the portal before your oxygen runs out, and don't touch the enemies.
 
-Built with JavaScript + Phaser 3, bundled with Vite. All sound is generated procedurally — no audio files required.
+Built with JavaScript + Phaser 3, bundled with Vite. All sound is generated procedurally — no audio files required. 
+
+First project using, and getting familiar with, Claude Code.
 
 ## Play
 
