@@ -12,7 +12,7 @@ First project using, and getting familiar with, Claude Code.
 
 ```bash
 npm install
-npm run gen-assets   # generate placeholder sprites (run once)
+npm run gen-assets   # generate pixel art sprites (run once)
 npm run dev          # open http://localhost:5173
 ```
 
@@ -23,7 +23,7 @@ Controls: **Arrow keys** or **WASD** to move, **Up / W** to jump (hold longer to
 ```bash
 npm run build        # production build → dist/
 npm run preview      # serve the dist/ folder locally
-npm run gen-assets   # regenerate placeholder PNG assets
+npm run gen-assets   # regenerate pixel art PNG sprites
 npm run gen-levels   # regenerate Tiled JSON from ASCII level designs
 npm run deploy       # build and publish to GitHub Pages
 ```
@@ -42,9 +42,9 @@ public/
     tilemaps/   Tiled JSON level files (level-01 → level-03)
     tilesets/   Tileset PNG images
     sprites/    Player, enemy, collectible, portal sprites
-    audio/      Placeholder OGG stubs (replaced by ProceduralAudio at runtime)
+    audio/      Silent OGG stubs (all audio is procedural at runtime)
 scripts/
-  gen-assets.js    Generates placeholder PNG/OGG files for development
+  gen-assets.js    Generates pixel art PNGs and silent OGG stubs
   design-levels.js Defines levels as ASCII art and writes Tiled JSON
 ```
 
