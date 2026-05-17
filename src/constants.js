@@ -26,3 +26,9 @@ export const LEVELS = [
   'level-02',
   'level-03',
 ];
+
+export const LEVEL_TITLES = [
+  'The Mine Entrance',
+  'The Deep Shaft',
+  'The Crystal Chamber',
+];

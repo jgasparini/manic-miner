@@ -6,7 +6,7 @@ import {
 } from '../constants.js';
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene, x, y) {
+  constructor(scene, x, y, audio = null) {
     super(scene, x, y, 'player');
     scene.add.existing(this);
     scene.physics.add.existing(this);
@@ -14,14 +14,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.setCollideWorldBounds(true);
     this.body.setSize(24, 28).setOffset(4, 4);
 
-    this._keys = scene.input.keyboard.createCursorKeys();
-    this._wasd = scene.input.keyboard.addKeys({ up: 'W', left: 'A', right: 'D' });
+    this._keys  = scene.input.keyboard.createCursorKeys();
+    this._wasd  = scene.input.keyboard.addKeys({ up: 'W', left: 'A', right: 'D' });
+    this._audio = audio;
 
-    // Track coyote time
     this._coyoteTimer = 0;
-    this._wasOnGround = false;
-
-    this._isDead = false;
+    this._isDead      = false;
 
     this._buildAnimations(scene);
   }
@@ -65,7 +63,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     if (jumpPressed && canJump) {
       this.setVelocityY(PLAYER_JUMP_VELOCITY);
       this._coyoteTimer = 0;
-      try { this.scene.sound.play('sfx-jump', { volume: 0.5 }); } catch (_) {}
+      this._audio?.playJump();
     }
 
     // Cut jump short on release (variable height)
@@ -86,11 +84,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   die() {
     if (this._isDead) return;
     this._isDead = true;
-    this.setVelocity(0, -200);
+    this.setVelocity(0, -180);
     this.body.setAllowGravity(false);
-    this.setTint(0xff0000);
-    try { this.scene.sound.play('sfx-die', { volume: 0.6 }); } catch (_) {}
-    this.scene.cameras.main.shake(300, 0.01);
+    this.setTint(0xff4444);
+    this.scene.cameras.main.shake(280, 0.012);
   }
 
   _buildAnimations(scene) {
