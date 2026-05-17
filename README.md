@@ -2,7 +2,9 @@
 
 A browser-based 2D platformer inspired by the classic 1983 ZX Spectrum game by Matthew Smith. Collect all the items in each cavern, reach the portal before your oxygen runs out, and don't touch the enemies.
 
-Built with JavaScript + Phaser 3, bundled with Vite. All sound is generated procedurally — no audio files required. 
+Built with JavaScript + Phaser 3, bundled with Vite. All sound is generated procedurally — no audio files required.
+
+**[▶ Play it now](https://jgasparini.github.io/manic-miner)** 
 
 First project using, and getting familiar with, Claude Code.
 
@@ -23,6 +25,7 @@ npm run build        # production build → dist/
 npm run preview      # serve the dist/ folder locally
 npm run gen-assets   # regenerate placeholder PNG assets
 npm run gen-levels   # regenerate Tiled JSON from ASCII level designs
+npm run deploy       # build and publish to GitHub Pages
 ```
 
 ## Project structure
@@ -87,4 +90,4 @@ All sound is generated at runtime using the Web Audio API — no external files 
 - [x] Procedural audio (SFX + chiptune music)
 - [x] Visual polish (title cards, score popups, portal pulse, death flash)
 - [x] Pixel art assets (miner, bat enemy, gem, portal, cave stone tileset)
-- [ ] Deploy to GitHub Pages
+- [x] Deploy to GitHub Pages — https://jgasparini.github.io/manic-miner
