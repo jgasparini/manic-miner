@@ -25,30 +25,40 @@ const SOLID  = 1; // GID in tileset
 // ── Level definitions ──────────────────────────────────────────────────────
 
 // Each level is an array of exactly-25-character strings (15 rows).
+// Platform tier heights (with PLAYER_JUMP_VELOCITY = -480, max jump ≈ 192px = 6 tiles):
+//   Items are placed ONE ROW ABOVE their platform so the player walks into them
+//   without needing an extra jump (sprite centre matches item centre).
+//   Vertical gap between consecutive tiers is 3 rows (96px) — comfortable.
+//
+//   Tier layout (row numbers):
+//     Tier 0  Ground     rows 13-14  y=416 (standing surface)
+//     Tier 1  row 11     y=352       gap from ground: 2 rows / 64px  ✓ easy
+//     Tier 2  row 8      y=256       gap from T1:     3 rows / 96px  ✓ easy
+//     Tier 3  row 5      y=160       gap from T2:     3 rows / 96px  ✓ easy
+//     Tier 4  row 2      y=64        gap from T3:     3 rows / 96px  ✓ easy
+
 const LEVELS = [
   {
     name: 'level-01',
     title: 'The Mine Entrance',
     o2Seconds: 90,
-    // 25 cols × 15 rows
     map: [
-      '.........................',  // 0
-      '.........................',  // 1
-      '.........................',  // 2
-      '......C..................',  // 3  high collectible, top platform
-      '.....XXXXX...............',  // 4
-      '.........................',  // 5
-      '.C...........C...........',  // 6  mid collectibles
-      '.XXX......XXXXXXX.......O',  // 7  mid platforms + portal top-right
-      '.........................',  // 8
-      '..........E..............',  // 9  enemy patrols ground
-      '.........................',  // 10
-      '....C.........C..........',  // 11 lower collectibles
-      'P..XXXXXXXXXXXXXXXXXX....',  // 12 player start, big platform
-      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 13 solid floor
-      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 14 solid floor
+      '.........................',  //  0
+      '.........................',  //  1
+      '.........................',  //  2
+      '.........................',  //  3
+      '..........C...........O..',  //  4  1 item + portal (same height as T3 platform surface)
+      '.....XXXXXXXXXXXXXXXXXX..',  //  5  T3 platform  cols 5-22
+      '.........................',  //  6
+      '..C..............C.......',  //  7  2 items (same height as T2 platform surface)
+      '.XXXXXXXX......XXXXXXXX..',  //  8  T2 platforms cols 1-8, cols 15-22
+      '.........................',  //  9
+      '.....C..........C........',  // 10  2 items (same height as T1 platform surface)
+      '...XXXXXXX..XXXXXXXXXX...',  // 11  T1 platforms cols 3-11, cols 13-22
+      'P...........E............',  // 12  player + enemy on ground
+      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 13
+      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 14
     ],
-    // Custom patrol distances for enemies (by encounter order, default = 5 tiles)
     enemyPatrols: [6],
   },
 
@@ -57,21 +67,21 @@ const LEVELS = [
     title: 'The Deep Shaft',
     o2Seconds: 60,
     map: [
-      '.........................',  // 0
-      '..C......................',  // 1  top item, hard to reach
-      '.XXXXXXX.................',  // 2  top-left platform
-      '...............C.........',  // 3  item on right
-      '.......XXXXXXXXXX........',  // 4  mid-right platform
-      '.........................',  // 5
-      '...C.......C.........C...',  // 6  three items on mid platforms
-      '..XXXXX...XXXXXXX...XXXX.',  // 7  three mid platforms
-      '.........................',  // 8
-      '.C.....E.........E...C...',  // 9  two enemies, two items
-      '.XXXXXXXXXXXXXXXXXXXXXXX.',  // 10 near-full-width platform
-      '.........................',  // 11
-      '.....E..............O....',  // 12 third enemy near portal
-      'P.XXXXXXXXXXXXXXXXXXXXXXX',  // 13 player start, ground
-      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 14 solid floor
+      '.........................',  //  0
+      '.........................',  //  1
+      '.C....C.........C.....O..',  //  2  3 items + portal (T4 surface height)
+      '.XXXXX...........XXXXXX..',  //  3  T4 platforms cols 1-5, cols 17-22
+      '.........................',  //  4
+      '....C............C.......',  //  5  2 items (T3 surface height)
+      '...XXXXX.......XXXXXXXX..',  //  6  T3 platforms cols 3-7, cols 15-22
+      '..E.............E........',  //  7  2 enemies — fall to T3 platforms
+      '......C..........C.......',  //  8  2 items (T2 surface height)
+      '.....XXXXXXX...XXXXXXXX..',  //  9  T2 platforms cols 5-11, cols 15-22
+      '.........................',  // 10
+      '.....E...................',  // 11  enemy on ground
+      'P........................',  // 12  player
+      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 13
+      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 14
     ],
     enemyPatrols: [5, 5, 4],
   },
@@ -81,21 +91,21 @@ const LEVELS = [
     title: 'The Crystal Chamber',
     o2Seconds: 45,
     map: [
-      '.....................O...',  // 0  portal is up high — must climb
-      'C..........C.........XXXX',  // 1  top items on high shelf
-      'XXXXX.....XXXXX..........',  // 2  top platforms
-      '.........................',  // 3
-      '..C.........C.........C..',  // 4  mid-high items
-      '.XXXXXX...XXXXXXX...XXXXX',  // 5  mid platforms
-      '.........................',  // 6
-      '.....C...........C.......',  // 7  mid items
-      '....XXXXXXXX...XXXXXXXX..',  // 8  lower-mid platforms
-      '..E...........E..........',  // 9  two enemies on big platform
-      '.XXXXXXXXXXXXXXXXXXXXXXX.',  // 10 big platform
-      '.........................',  // 11
-      'E.........E.........E....',  // 12 three enemies on ground
-      'PXXXXXXXXXXXXXXXXXXXXXXXX',  // 13 player on left, solid ground
-      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 14 solid floor
+      '.........................',  //  0
+      '.C...............C....O..',  //  1  2 items + portal (T4 surface height)
+      '.XXXXX...........XXXXXX..',  //  2  T4 platforms cols 1-5, cols 17-22
+      '.........................',  //  3
+      '....C......C......C......',  //  4  3 items (T3 surface height)
+      '...XXXXX..XXXXXX..XXXXX..',  //  5  T3 platforms cols 3-7, 10-15, 18-22
+      '...E.......E.......E.....',  //  6  3 enemies — fall to T3 platforms
+      '.................C.......',  //  7  1 item (T2 surface height)
+      '........XXXXXXXXXX.......',  //  8  T2 platform   cols 8-17
+      '....C.................C..',  //  9  2 items (T1 surface height)
+      '...XXXXXX.......XXXXXXXX.',  // 10  T1 platforms cols 3-8, cols 16-23
+      '.....E.........E.........',  // 11  2 enemies — fall to ground
+      'P.........C...........C..',  // 12  player + 2 ground items
+      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 13
+      'XXXXXXXXXXXXXXXXXXXXXXXXX',  // 14
     ],
     enemyPatrols: [5, 5, 5, 4, 4],
   },

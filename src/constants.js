@@ -3,7 +3,7 @@ export const GRAVITY = 600;
 
 // Player
 export const PLAYER_SPEED = 160;
-export const PLAYER_JUMP_VELOCITY = -380;
+export const PLAYER_JUMP_VELOCITY = -480; // max jump ≈ 192px / 6 tiles
 export const COYOTE_TIME = 80; // ms after leaving a platform where jump still registers
 
 // Oxygen
