@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "gen-assets": "node scripts/gen-assets.js"
+    "gen-assets": "node scripts/gen-assets.js",
+    "gen-levels": "node scripts/design-levels.js"
   },
   "dependencies": {
     "phaser": "^3.88.2"

@@ -1,14 +1,15 @@
 import { O2_DURATION } from '../constants.js';
 
 export default class OxygenSystem {
-  constructor(scene) {
+  constructor(scene, durationSeconds = O2_DURATION) {
     this._scene = scene;
-    this._remaining = O2_DURATION * 1000; // ms
+    this._remaining = durationSeconds * 1000; // ms
+    this._total = durationSeconds * 1000;
     this._active = true;
   }
 
   get ratio() {
-    return this._remaining / (O2_DURATION * 1000);
+    return this._remaining / this._total;
   }
 
   update(delta) {

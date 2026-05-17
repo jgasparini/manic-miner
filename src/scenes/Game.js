@@ -47,8 +47,8 @@ export default class Game extends Phaser.Scene {
     this.physics.add.overlap(this._player, this._portal, this._onPortal, null, this);
     this.physics.add.overlap(this._player, this._enemies, this._onEnemyHit, null, this);
 
-    // Oxygen
-    this._oxygen = new OxygenSystem(this);
+    // Oxygen — duration comes from the map's o2Seconds custom property
+    this._oxygen = new OxygenSystem(this, level.o2Seconds);
     this.events.on('oxygen-depleted', () => this._triggerDeath());
 
     // Camera

@@ -51,6 +51,8 @@ export default class LevelManager {
     this._scene.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this._scene.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
+    const o2Seconds = map.properties?.find(p => p.name === 'o2Seconds')?.value ?? 60;
+
     return {
       map,
       groundLayer,
@@ -60,6 +62,7 @@ export default class LevelManager {
       enemies,
       portal,
       totalItems: collectibles.getLength(),
+      o2Seconds,
     };
   }
 
