@@ -1,0 +1,164 @@
+{
+  "compressionlevel": -1,
+  "height": 15,
+  "infinite": false,
+  "properties": [
+    {
+      "name": "o2Seconds",
+      "type": "int",
+      "value": 40
+    }
+  ],
+  "layers": [
+    {
+      "data": [
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+      ],
+      "height": 15,
+      "id": 1,
+      "name": "Decoration",
+      "opacity": 1,
+      "type": "tilelayer",
+      "visible": true,
+      "width": 25,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "data": [
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+      ],
+      "height": 15,
+      "id": 2,
+      "name": "Ground",
+      "opacity": 1,
+      "type": "tilelayer",
+      "visible": true,
+      "width": 25,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "draworder": "topdown",
+      "id": 3,
+      "name": "Collectibles",
+      "objects": [
+        { "id": 3,  "name": "item", "type": "", "x": 64,  "y": 0,   "width": 32, "height": 32, "properties": [] },
+        { "id": 4,  "name": "item", "type": "", "x": 192, "y": 0,   "width": 32, "height": 32, "properties": [] },
+        { "id": 5,  "name": "item", "type": "", "x": 576, "y": 64,  "width": 32, "height": 32, "properties": [] },
+        { "id": 6,  "name": "item", "type": "", "x": 640, "y": 64,  "width": 32, "height": 32, "properties": [] },
+        { "id": 7,  "name": "item", "type": "", "x": 192, "y": 128, "width": 32, "height": 32, "properties": [] },
+        { "id": 8,  "name": "item", "type": "", "x": 352, "y": 128, "width": 32, "height": 32, "properties": [] },
+        { "id": 9,  "name": "item", "type": "", "x": 352, "y": 192, "width": 32, "height": 32, "properties": [] },
+        { "id": 10, "name": "item", "type": "", "x": 512, "y": 192, "width": 32, "height": 32, "properties": [] },
+        { "id": 11, "name": "item", "type": "", "x": 32,  "y": 256, "width": 32, "height": 32, "properties": [] },
+        { "id": 12, "name": "item", "type": "", "x": 160, "y": 256, "width": 32, "height": 32, "properties": [] },
+        { "id": 13, "name": "item", "type": "", "x": 576, "y": 288, "width": 32, "height": 32, "properties": [] },
+        { "id": 14, "name": "item", "type": "", "x": 672, "y": 288, "width": 32, "height": 32, "properties": [] }
+      ],
+      "opacity": 1,
+      "type": "objectgroup",
+      "visible": true,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "draworder": "topdown",
+      "id": 4,
+      "name": "Enemies",
+      "objects": [
+        { "id": 15, "name": "enemy", "type": "", "x": 96,  "y": 0,   "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 5 }] },
+        { "id": 16, "name": "enemy", "type": "", "x": 256, "y": 128, "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 6 }] },
+        { "id": 17, "name": "enemy", "type": "", "x": 416, "y": 128, "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 4 }] },
+        { "id": 18, "name": "enemy", "type": "", "x": 416, "y": 192, "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 6 }] },
+        { "id": 19, "name": "enemy", "type": "", "x": 96,  "y": 256, "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 4 }] },
+        { "id": 20, "name": "enemy", "type": "", "x": 640, "y": 288, "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 4 }] },
+        { "id": 21, "name": "enemy", "type": "", "x": 352, "y": 384, "width": 32, "height": 32, "properties": [{ "name": "patrolDistance", "type": "int", "value": 8 }] }
+      ],
+      "opacity": 1,
+      "type": "objectgroup",
+      "visible": true,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "draworder": "topdown",
+      "id": 5,
+      "name": "Portal",
+      "objects": [
+        { "id": 2, "name": "portal", "type": "", "x": 704, "y": 64, "width": 32, "height": 32, "properties": [] }
+      ],
+      "opacity": 1,
+      "type": "objectgroup",
+      "visible": true,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "draworder": "topdown",
+      "id": 6,
+      "name": "PlayerStart",
+      "objects": [
+        { "id": 1, "name": "start", "type": "", "x": 32, "y": 384, "width": 32, "height": 32, "properties": [] }
+      ],
+      "opacity": 1,
+      "type": "objectgroup",
+      "visible": true,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "nextlayerid": 7,
+  "nextobjectid": 22,
+  "orientation": "orthogonal",
+  "renderorder": "right-down",
+  "tiledversion": "1.10.0",
+  "tileheight": 32,
+  "tilesets": [
+    {
+      "columns": 8,
+      "firstgid": 1,
+      "image": "../tilesets/tileset-cave.png",
+      "imageheight": 32,
+      "imagewidth": 256,
+      "margin": 0,
+      "name": "tileset-cave",
+      "spacing": 0,
+      "tilecount": 8,
+      "tileheight": 32,
+      "tilewidth": 32
+    }
+  ],
+  "tilewidth": 32,
+  "type": "map",
+  "version": "1.10",
+  "width": 25
+}
