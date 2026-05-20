@@ -39,7 +39,7 @@ src/
   constants.js  All tunable values (speed, gravity, jump, oxygen timer…)
 public/
   assets/
-    tilemaps/   Tiled JSON level files (level-01 → level-03)
+    tilemaps/   Tiled JSON level files (level-01 → level-06)
     tilesets/   Tileset PNG images
     sprites/    Player, enemy, collectible, portal sprites
     audio/      Silent OGG stubs (all audio is procedural at runtime)
@@ -66,6 +66,9 @@ Levels are defined as ASCII art in `scripts/design-levels.js` and compiled to Ti
 | 1 | The Mine Entrance | 5 | 1 | 90s |
 | 2 | The Deep Shaft | 7 | 3 | 60s |
 | 3 | The Crystal Chamber | 10 | 5 | 45s |
+| 4 | The Drowned Gallery | 12 | 7 | 40s |
+| 5 | The Obsidian Vaults | 14 | 9 | 30s |
+| 6 | The Final Descent | 16 | 11 | 25s |
 
 ## Audio
 
@@ -86,7 +89,7 @@ All sound is generated at runtime using the Web Audio API — no external files 
 - [x] Patrol enemies with edge detection
 - [x] Lives, score, HUD overlay
 - [x] Menu and Game Over screens
-- [x] 3 complete levels with escalating difficulty
+- [x] 6 complete levels with escalating difficulty
 - [x] Procedural audio (SFX + chiptune music)
 - [x] Visual polish (title cards, score popups, portal pulse, death flash)
 - [x] Pixel art assets (miner, bat enemy, gem, portal, cave stone tileset)
